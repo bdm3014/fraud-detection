@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fraud-Detection, New Prediction</title>
+    <link rel="icon" href="/static/favicon.ico" type="image/x-icon">
+    
+    <!--bootstrap-->
+    <link rel = "stylesheet" href = "/static/css/index.css">
+    <link rel = "stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+          crossorigin="anonymous">
+</head>
+<body>
+    <div class = "container">
+       <div class = "row">
+          <br>
+       </div>
+       <div class = "row">
+         <div class = "col-md-3">
+            <img src = "/static/img/lambton.png" alt = "lambton.png" style = "vertical-align:middle;">
+         </div>
+         <div class = "col-md-9">
+            <h2 style="color:white;vertical-align:middle;">New Fraud Prediction</h2>
+         </div>
+       </div>
+       <div class = "row">
+          <br>
+       </div>
+       <div class = "row">
+          <div class = "col-md-6" style="color:white">
+             <strong>
+             This form works like a demo of our Fraud Detection API.
+             <br>
+             API spec: 
+             <a target="_blank" id="dynamicLink" href="#">Loading ...</a>
+             <script>
+                  document.addEventListener('DOMContentLoaded', function ()
+                  {
+                     var dynamicLink = document.getElementById('dynamicLink');
+                     var baseUrl = window.location.protocol + "//" + window.location.host;
+                     dynamicLink.href = baseUrl + "/swagger";
+                     dynamicLink.textContent = baseUrl + "/swagger";
+                  });
+             </script>
+             </strong>
+          </div>
+          <div class = "col-md-6" style = "color:white; text-align: right;">
+            <strong>
+               This form is dynamically created using a customized field definition <a target="_blank" href="/data/fields.json" >file</a>.
+               <br>
+               Test quickly, fill out the form with dummy data: 
+            <a href = "javascript:void(0);" onclick = "load_examples('example_01');">1</a>,
+            <a href = "javascript:void(0);" onclick = "load_examples('example_02');">2</a>.
+            </strong>
+          </div>
+       </div>
+       <div class = "row">
+          <div class = "col-md-12">
+             <br>
+          </div>
+       </div>
+       <div class = "row">
+          <div id = "new_input_div" class = "col-md-12 table-responsive">
+          </div>
+       </div>
+       <div class = "row">
+          <div class = "col-md-3 d-grid">
+             <input type = "button" class = "btn btn-success" value = "Go to Recent Predictions"  onclick = "recent_predictions();">
+          </div>
+          <div class = "col-md-5">
+          </div>
+          <div class = "col-md-2 d-grid">
+             <input type = "button" class = "btn btn-warning" value = "Clean Form" onclick = "reset();">
+          </div>
+          <div class = "col-md-2 d-grid">
+             <input type = "button" class = "btn btn-danger" value = "PREDICT" onclick = "validateFields();">
+          </div>
+       </div>
+       <div class = "row">
+          <br>
+          <br>
+       </div>
+       <div class = "row">
+          <div class = "col-md-2" style = "background-color: lightblue;">
+             <label style = "color:#000099" ><br><strong>PREDICTION:</strong><br><br></label>
+          </div>
+          <div class = "col-md-10" style = "background-color: lightgrey;">
+             <label id = "lblResult" name = "lblResult">
+                <br><strong>please, enter form parameters and click PREDICT button to get the result...</strong><br><br>
+             </label>
+          </div>
+       </div>
+    </div>
+    <div class = "row">
+       <br>
+       <br>
+    </div>
+    <!--javascript-->
+    <script type = "text/javascript" src = "js/newinput.js"></script>
+</body>
+</html>

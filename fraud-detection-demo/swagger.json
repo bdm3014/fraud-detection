@@ -1,0 +1,574 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Fraud Prediction API",
+    "description": "API for Fraud Prediction.",
+    "version": "1.0"
+  },
+  "basePath": "/api",
+  "schemes": [
+    "http",
+    "https"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+
+  "paths": {
+    "/prediction": {
+      "post": {
+        "summary": "Returns response of the fraud detection model.",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "requestBody",
+            "description": "Request body for your endpoint",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+
+                "TransactionAmt": {
+                  "description": "Transaction Payment Amount in USD (values from 0.01 to 1000000.00)",
+                  "type": "number",
+                  "nullable": false,
+                  "example": 123.45
+                },
+                "ProductCD": {
+                  "description": "Product Code (values: C, H, R, S, W)",
+                  "type": "string",
+                  "nullable": false,
+                  "example": "H"
+                },
+
+                "card1": {
+                  "description": "Payment Card Information, Feature 1 (values from 100 to 19000)",
+                  "type": "integer",
+                  "nullable": false,
+                  "example": 9999
+                },
+                "card2": {
+                  "description": "Payment Card Information, Feature 2 (values from 100 to 600)",
+                  "type": "integer",
+                  "nullable": true,
+                  "example": 321
+                },
+                "card3": {
+                  "description": "Payment Card Information, Feature 3 (values from 100 to 299)",
+                  "type": "integer",
+                  "nullable": false,
+                  "example": 100
+                },
+                "card5": {
+                  "description": "Payment Card Information, Feature 5 (values from 100 to 240)",
+                  "type": "string",
+                  "nullable": false,
+                  "example": "199"
+                },
+                "card6": {
+                  "description": "Payment Card Information, Credit or Debit?",
+                  "type": "string",
+                  "nullable": false,
+                  "example": "credit"
+                },
+
+                "addr1": {
+                  "description": "Address Information, Feature 1 (values from 100 to 540)",
+                  "type": "integer",
+                  "nullable": true,
+                  "example": 319
+                },
+                "addr2": {
+                  "description": "Address Information, Feature 2 (values from 10 to 102)",
+                  "type": "integer",
+                  "nullable": true,
+                  "example": 59
+                },
+
+                "dist1": {
+                  "description": "Distance Information, Feature 1 (values from 0 to 10300)",
+                  "type": "integer",
+                  "nullable": true,
+                  "example": 5999
+                },
+
+                "P_emaildomain": {
+                  "description": "Purchaser Email (format: gmail.com)",
+                  "type": "string",
+                  "nullable": true,
+                  "example": "yahoo.com"
+                },
+                "R_emaildomain": {
+                  "description": "Recipient Email (format: gmail.com)",
+                  "type": "string",
+                  "nullable": true,
+                  "example": "gmail.com"
+                },
+
+                "C1": {
+                  "description": "Counting Feature 1 (values from 0 to 4700)",
+                  "type": "integer",
+                  "nullable": false,
+                  "example": 1599
+                },
+                "C5": {
+                  "description": "Counting Feature 5 (values from 0 to 350)",
+                  "type": "integer",
+                  "nullable": false,
+                  "example": 199
+                },
+                "C13": {
+                  "description": "Counting Feature 13 (values from 0 to 2920)",
+                  "type": "integer",
+                  "nullable": false,
+                  "example": 1599
+                },
+
+                "D1": {
+                  "description": "Timedelta Feature 1 (values from 0 to 640)",
+                  "type": "integer",
+                  "nullable": false,
+                  "example": 100
+                },
+                "D2": {
+                  "description": "Timedelta Feature 2 (values from 0 to 640)",
+                  "type": "integer",
+                  "nullable": true,
+                  "example": 200
+                },
+                "D3": {
+                  "description": "Timedelta Feature 3 (values from 0 to 820)",
+                  "type": "integer",
+                  "nullable": true,
+                  "example": 300
+                },
+
+                "D4": {
+                  "description": "Timedelta Feature 4 (values from 0 to 870)",
+                  "type": "integer",
+                  "nullable": true,
+                  "example": 400
+                },
+                "D5": {
+                  "description": "Timedelta Feature 5 (values from 0 to 820)",
+                  "type": "integer",
+                  "nullable": true,
+                  "example": 500
+                },
+                "D6": {
+                  "description": "Timedelta Feature 7 (values from -85 to 880)",
+                  "type": "integer",
+                  "nullable": true,
+                  "example": 600
+                },
+                "D7": {
+                  "description": "Timedelta Feature 7 (values from 0 to 850)",
+                  "type": "integer",
+                  "nullable": true,
+                  "example": 700
+                },
+                "D8": {
+                  "description": "Timedelta Feature 8 (values from 0.00 to 1700.00)",
+                  "type": "number",
+                  "nullable": true,
+                  "example": 800.88
+                },
+                "D9": {
+                  "description": "Timedelta Feature 9 (values from 0.00 to 1.00)",
+                  "type": "number",
+                  "nullable": true,
+                  "example": 0.55
+                },
+
+
+                "D10": {
+                  "description": "Timedelta Feature 10 (values from 0 to 880)",
+                  "type": "number",
+                  "nullable": true,
+                  "example": 100
+                },
+                "D11": {
+                  "description": "Timedelta Feature 11 (values from 0 to 670)",
+                  "type": "number",
+                  "nullable": true,
+                  "example": 110
+                },
+                "D12": {
+                  "description": "Timedelta Feature 12 (values from -85 to 650)",
+                  "type": "number",
+                  "nullable": true,
+                  "example": 120
+                },
+                "D14": {
+                  "description": "Timedelta Feature 14 (values from -195 to 880)",
+                  "type": "number",
+                  "nullable": true,
+                  "example": 140
+                },
+                "D15": {
+                  "description": "Timedelta Feature 15 (values from -85 to 880)",
+                  "type": "number",
+                  "nullable": true,
+                  "example": 150
+                },
+
+                "M3": {
+                  "description": "Match Feature 3 (values: T or F)",
+                  "type": "string",
+                  "nullable": true,
+                  "example": "T"
+                },
+                "M4": {
+                  "description": "Match Feature 4 (values: M0, M1 or M2)",
+                  "type": "string",
+                  "nullable": true,
+                  "example": "M2"
+                },
+                "M5": {
+                  "description": "Match Feature 5 (values: T or F)",
+                  "type": "string",
+                  "nullable": true,
+                  "example": "F"
+                },
+                "M6": {
+                  "description": "Match Feature 6 (values: T or F)",
+                  "type": "string",
+                  "nullable": true,
+                  "example": "T"
+                },
+                "M9": {
+                  "description": "Match Feature 9 (values: T or F)",
+                  "type": "string",
+                  "nullable": true,
+                  "example": "F"
+                },
+
+                "V5": {
+                  "description": "Vesta Feature 5 (values from 0 to 6)",
+                  "type": "integer",
+                  "nullable": true,
+                  "example": 3
+                },
+                "V13": {
+                  "description": "Vesta Feature 13 (values from 0 to 6)",
+                  "type": "integer",
+                  "nullable": true,
+                  "example": 3
+                },
+                "V20": {
+                  "description": "Vesta Feature 20 (values from 0 to 15)",
+                  "type": "integer",
+                  "nullable": true,
+                  "example": 8
+                },
+                "V30": {
+                  "description": "Vesta Feature 30 (values from 0 to 9)",
+                  "type": "integer",
+                  "nullable": true,
+                  "example": 5
+                },
+                "V36": {
+                  "description": "Vesta Feature 36 (values from 0 to 5)",
+                  "type": "integer",
+                  "nullable": true,
+                  "example": 25
+                },
+                "V37": {
+                  "description": "Vesta Feature 37 (values from 0 to 54)",
+                  "type": "integer",
+                  "nullable": true,
+                  "example": 3
+                },
+                "V44": {
+                  "description": "Vesta Feature 44 (values from 0 to 48)",
+                  "type": "integer",
+                  "nullable": true,
+                  "example": 24
+                },
+                "V47": {
+                  "description": "Vesta Feature 47 (values from 0 to 12)",
+                  "type": "integer",
+                  "nullable": true,
+                  "example": 6
+                },
+                "V54": {
+                  "description": "Vesta Feature 54 (values from 0 to 6)",
+                  "type": "integer",
+                  "nullable": true,
+                  "example": 3
+                },
+                "V56": {
+                  "description": "Vesta Feature 56 (values from 0 to 51)",
+                  "type": "integer",
+                  "nullable": true,
+                  "example": 25
+                },
+                "V62": {
+                  "description": "Vesta Feature 62 (values from 0 to 10)",
+                  "type": "integer",
+                  "nullable": true,
+                  "example": 5
+                },
+                "V67": {
+                  "description": "Vesta Feature 67 (values from 0 to 8)",
+                  "type": "integer",
+                  "nullable": true,
+                  "example": 4
+                },
+                "V76": {
+                  "description": "Vesta Feature 76 (values from 0 to 6)",
+                  "type": "integer",
+                  "nullable": true,
+                  "example": 3
+                },
+                "V77": {
+                  "description": "Vesta Feature 77 (values from 0 to 30)",
+                  "type": "integer",
+                  "nullable": true,
+                  "example": 15
+                },
+                "V80": {
+                  "description": "Vesta Feature 80 (values from 0 to 19)",
+                  "type": "integer",
+                  "nullable": true,
+                  "example": 9
+                },
+                "V82": {
+                  "description": "Vesta Feature 82 (values from 0 to 7)",
+                  "type": "integer",
+                  "nullable": true,
+                  "example": 3
+                },
+                "V86": {
+                  "description": "Vesta Feature 86 (values from 0 to 30)",
+                  "type": "integer",
+                  "nullable": true,
+                  "example": 15
+                },
+                "V96": {
+                  "description": "Vesta Feature 96 (values from 0 to 1410)",
+                  "type": "integer",
+                  "nullable": false,
+                  "example": 799
+                },
+                "V127": {
+                  "description": "Vesta Feature 127 (values from 0 to 160000)",
+                  "type": "integer",
+                  "nullable": false,
+                  "example": 90000
+                },
+                "V142": {
+                  "description": "Vesta Feature 142 (values from 0 to 9)",
+                  "type": "integer",
+                  "nullable": true,
+                  "example": 5
+                },
+                "V156": {
+                  "description": "Vesta Feature 156 (values from 0 to 24)",
+                  "type": "integer",
+                  "nullable": true,
+                  "example": 12
+                },
+                "V160": {
+                  "description": "Vesta Feature 160 (values from 0.00 to 650000.00)",
+                  "type": "integer",
+                  "nullable": true,
+                  "example": 325000.00
+                },
+                "V162": {
+                  "description": "Vesta Feature 162 (values from 0 to 3300)",
+                  "type": "integer",
+                  "nullable": true,
+                  "example": 2300
+                },
+                "V171": {
+                  "description": "Vesta Feature 171 (values from 0 to 61)",
+                  "type": "integer",
+                  "nullable": true,
+                  "example": 31
+                },
+                "V198": {
+                  "description": "Vesta Feature 198 (values from 0 to 21)",
+                  "type": "integer",
+                  "nullable": true,
+                  "example": 11
+                },
+                "V203": {
+                  "description": "Vesta Feature 203 (values from 0 to 384)",
+                  "type": "integer",
+                  "nullable": true,
+                  "example": 172
+                },
+                "V221": {
+                  "description": "Vesta Feature 221 (values from 0 to 140000)",
+                  "type": "integer",
+                  "nullable": true,
+                  "example": 70000
+                },
+                "V264": {
+                  "description": "Vesta Feature 264 (values from 0 to 153600)",
+                  "type": "integer",
+                  "nullable": true,
+                  "example": 73600
+                },
+                "V282": {
+                  "description": "Vesta Feature 282 (values from 0 to 32)",
+                  "type": "integer",
+                  "nullable": true,
+                  "example": 16
+                },
+                "V283": {
+                  "description": "Vesta Feature 283 (values from 0 to 68)",
+                  "type": "integer",
+                  "nullable": true,
+                  "example": 34
+                },
+                "V285": {
+                  "description": "Vesta Feature 285 (values from 0 to 95)",
+                  "type": "integer",
+                  "nullable": false,
+                  "example": 48
+                },
+                "V289": {
+                  "description": "Vesta Feature 289 (values from 0 to 12)",
+                  "type": "integer",
+                  "nullable": false,
+                  "example": 6
+                },
+                "V307": {
+                  "description": "Vesta Feature 307 (values from 0.00 to 146000.00)",
+                  "type": "number",
+                  "nullable": true,
+                  "example": 76000.00
+                },
+                "V310": {
+                  "description": "Vesta Feature 310 (values from 0 to 55200)",
+                  "type": "integer",
+                  "nullable": false,
+                  "example": 27600
+                },
+                "V312": {
+                  "description": "Vesta Feature 312 (values from 0 to 55200)",
+                  "type": "integer",
+                  "nullable": false,
+                  "example": 27600
+                },
+                "V314": {
+                  "description": "Vesta Feature 314 (values from 0.00 to 7520.00)",
+                  "type": "number",
+                  "nullable": false,
+                  "example": 3999.00
+                },
+
+                "id_01": {
+                  "description": "Identity Information, Feature 01 (values from -1 to -100)",
+                  "type": "integer",
+                  "nullable": false,
+                  "example": -50
+                },
+                "id_02": {
+                  "description": "Identity Information, Feature 02 (values from 1 to 999999)",
+                  "type": "integer",
+                  "nullable": true,
+                  "example": 500000
+                },
+                "id_05": {
+                  "description": "Identity Information, Feature 05 (values from -72 to 52)",
+                  "type": "integer",
+                  "nullable": true,
+                  "example": 0
+                },
+                "id_06": {
+                  "description": "Identity Information, Feature 06 (values from 0 to -100)",
+                  "type": "integer",
+                  "nullable": true,
+                  "example": -50
+                },
+                "id_09": {
+                  "description": "Identity Information, Feature 09 (values from -36 to 25)",
+                  "type": "integer",
+                  "nullable": true,
+                  "example": -10
+                },
+                "id_12": {
+                  "description": "Identity Information, Feature 12 (values: Found or NotFound)",
+                  "type": "string",
+                  "nullable": false,
+                  "example": "Found"
+                },
+                "id_17": {
+                  "description": "Identity Information, Feature 17 (values from 100 to 228)",
+                  "type": "integer",
+                  "nullable": true,
+                  "example": 164
+                },
+                "id_30": {
+                  "description": "Identity Information, Operating System (samples: Android, iOS, Windows)",
+                  "type": "string",
+                  "nullable": true,
+                  "example": "Android"
+                },
+                "id_31": {
+                  "description": "Identity Information, Web Browser (samples: Chrome, Firefox, Edge)",
+                  "type": "string",
+                  "nullable": true,
+                  "example": "Chrome"
+                },
+
+                "DeviceType": {
+                  "description": "Identity Information, Device Type (values: mobile or desktop)",
+                  "type": "string",
+                  "nullable": false,
+                  "example": "mobile"
+                },
+                "DeviceInfo": {
+                  "description": "Identity Information, Device Brand or Model (samples: Apple, Samsung)",
+                  "type": "string",
+                  "nullable": true,
+                  "example": "Samsung"
+                }
+
+              },
+
+              "required": [
+                "TransactionAmt",
+                "ProductCD",
+                "card3",
+                "card6",
+                "C5",
+                "C13",
+                "DeviceType",
+                "id_01"
+              ]
+            }
+          }
+        ],
+
+        "responses": {
+          "200": {
+            "description": "Successful response.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "result": {
+                  "description": "Fraud Detection Result: FRAUD, NOT-FRAUD, UNKNOWN, ERROR.",
+                  "type": "string",
+                  "example": "NOT-FRAUD"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

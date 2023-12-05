@@ -1,0 +1,62 @@
+*.swp
+*.*~
+.DS_Store
+Thumbs.db
+.thumbnails/
+
+# Python
+*.pyc
+__pycache__/
+*.ipynb_checkpoints/
+.pytest_cache/
+*.pyo
+*.pyd
+
+# IDEs
+.vs/
+.vscode/
+.idea/
+*.sublime-project
+
+# Environments
+.env
+.env.*
+venv/
+env/
+.venv/
+project.lock.json
+
+# Dependencies
+lib/
+lib64/
+bin/
+include/
+*.egg-info/
+nupkg/
+
+# Logs and Temporary Files
+*.log
+*.bak
+*.swp
+
+# User-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+build/
+bld/
+[Bb]in/
+[Oo]bj/
+[Oo]ut/
+msbuild.log
+msbuild.err
+msbuild.wrn

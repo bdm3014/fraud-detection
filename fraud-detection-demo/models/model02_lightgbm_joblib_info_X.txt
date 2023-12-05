@@ -1,0 +1,57 @@
+<class 'pandas.core.frame.DataFrame'>
+Index: 442905 entries, 2987000 to 3429904
+Data columns (total 50 columns):
+ #   Column                  Non-Null Count   Dtype  
+---  ------                  --------------   -----  
+ 0   card1                   442905 non-null  int64  
+ 1   TransactionAmt          442905 non-null  float64
+ 2   card2_target_encoded    436143 non-null  float64
+ 3   addr_target_encoded     392207 non-null  float64
+ 4   addr1_target_encoded    392207 non-null  float64
+ 5   dist1                   171642 non-null  float64
+ 6   D15                     370591 non-null  float64
+ 7   id_02                   112436 non-null  float64
+ 8   TransactionAmt_decimal  442905 non-null  int32  
+ 9   C1                      442905 non-null  float64
+ 10  D4                      312665 non-null  float64
+ 11  card5_target_encoded    439850 non-null  float64
+ 12  D2                      224113 non-null  float64
+ 13  D10                     379342 non-null  float64
+ 14  D11                     208084 non-null  float64
+ 15  V307                    442893 non-null  float32
+ 16  D1                      442631 non-null  float64
+ 17  D8                      58746 non-null   float64
+ 18  D5                      204555 non-null  float64
+ 19  V310                    442893 non-null  float32
+ 20  D3                      236769 non-null  float64
+ 21  id_05                   109424 non-null  float64
+ 22  V127                    442904 non-null  float32
+ 23  id_06                   109424 non-null  float64
+ 24  V314                    442631 non-null  float32
+ 25  D9                      58746 non-null   float64
+ 26  V264                    105261 non-null  float32
+ 27  V312                    442893 non-null  float32
+ 28  id_01                   115052 non-null  float64
+ 29  D14                     47457 non-null   float64
+ 30  V203                    111362 non-null  float32
+ 31  C5                      442905 non-null  float64
+ 32  D6                      55607 non-null   float64
+ 33  V283                    442631 non-null  float32
+ 34  D12                     50118 non-null   float64
+ 35  V36                     312634 non-null  float32
+ 36  V96                     442904 non-null  float32
+ 37  V221                    112961 non-null  float32
+ 38  V62                     378306 non-null  float32
+ 39  V82                     370570 non-null  float32
+ 40  V282                    442631 non-null  float32
+ 41  V54                     378306 non-null  float32
+ 42  V76                     370570 non-null  float32
+ 43  V37                     312634 non-null  float32
+ 44  V20                     379313 non-null  float32
+ 45  V5                      208084 non-null  float32
+ 46  V44                     312634 non-null  float32
+ 47  V285                    442893 non-null  float32
+ 48  V77                     370570 non-null  float32
+ 49  V56                     378306 non-null  float32
+dtypes: float32(23), float64(25), int32(1), int64(1)
+memory usage: 147.9 MB

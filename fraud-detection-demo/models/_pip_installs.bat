@@ -1,0 +1,19 @@
+ECHO "You must ese Python versions >=3.8, <3.12 because of catboost and shap"
+pip install pandas 
+pip install numpy 
+pip install scipy 
+pip install matplotlib 
+pip install seaborn 
+pip install statsmodels 
+pip install pandas_datareader 
+pip install xgboost 
+pip install lightgbm 
+pip install scikit-learn 
+pip install shap 
+pip install plotly 
+pip install cufflinks
+pip install statsmodels
+pip install chart_studio
+pin install hyperopt
+pip install catboost 
+pip install shap

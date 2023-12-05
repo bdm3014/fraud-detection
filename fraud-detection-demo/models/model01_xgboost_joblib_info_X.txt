@@ -1,0 +1,53 @@
+<class 'pandas.core.frame.DataFrame'>
+Index: 147635 entries, 3429905 to 3577539
+Data columns (total 46 columns):
+ #   Column                           Non-Null Count   Dtype  
+---  ------                           --------------   -----  
+ 0   V264                             25169 non-null   float32
+ 1   addr2_target_encoded             132618 non-null  float64
+ 2   V283                             146640 non-null  float32
+ 3   C1                               147635 non-null  float64
+ 4   C5                               147635 non-null  float64
+ 5   R_emaildomain_bin_google         147635 non-null  int32  
+ 6   M4_nan                           147635 non-null  int32  
+ 7   V30                              135154 non-null  float32
+ 8   V156                             14699 non-null   float32
+ 9   D3                               90893 non-null   float64
+ 10  card2_target_encoded             145464 non-null  float64
+ 11  V67                              135138 non-null  float32
+ 12  V198                             28383 non-null   float32
+ 13  M5_T                             147635 non-null  int32  
+ 14  device_name_Trident              147635 non-null  int32  
+ 15  ProductCD_R                      147635 non-null  int32  
+ 16  V62                              135138 non-null  float32
+ 17  id_12_Found                      147635 non-null  int32  
+ 18  M6_F                             147635 non-null  int32  
+ 19  V44                              108937 non-null  float32
+ 20  D2                               85630 non-null   float64
+ 21  V54                              135138 non-null  float32
+ 22  P_emaildomain_bin_anonymous      147635 non-null  int32  
+ 23  M9_F                             147635 non-null  int32  
+ 24  addr_target_encoded              132595 non-null  float64
+ 25  D8                               16180 non-null   float64
+ 26  card3_target_encoded             146877 non-null  float64
+ 27  Browser_id_31_Internet Explorer  147635 non-null  int32  
+ 28  V13                              135154 non-null  float32
+ 29  DeviceType_mobile                147635 non-null  int32  
+ 30  V307                             147635 non-null  float32
+ 31  M3_F                             147635 non-null  int32  
+ 32  V86                              130806 non-null  float32
+ 33  TransactionAmt                   147635 non-null  float64
+ 34  V289                             146640 non-null  float32
+ 35  OS_id_30_Mac                     147635 non-null  int32  
+ 36  V312                             147635 non-null  float32
+ 37  V160                             14705 non-null   float32
+ 38  D4                               108953 non-null  float64
+ 39  card6_debit                      147635 non-null  int32  
+ 40  V142                             14699 non-null   float32
+ 41  V47                              108937 non-null  float32
+ 42  V80                              130806 non-null  float32
+ 43  TransactionAmt_decimal           147635 non-null  int32  
+ 44  P_emaildomain_suffix_us          147635 non-null  int32  
+ 45  D15                              130836 non-null  float64
+dtypes: float32(18), float64(12), int32(16)
+memory usage: 37.8 MB
